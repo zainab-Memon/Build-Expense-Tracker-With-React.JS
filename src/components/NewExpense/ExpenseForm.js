@@ -6,49 +6,18 @@ const ExpenseForm = (props) => {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
-  // alternative approach using single state ------------------
-  // const [userInput, setUserInput] = useState({
-  //   enteredTitle: "",
-  //   enteredAmount: "",
-  //   enteredDate: "",
-  // });
-
   // For Title
   const titleChangeHandler = (event) => {
-    // using multiple states--------------------------
-    setEnteredTitle(event.target.value); //storing the user input in state (using multiple states)
-    // using single state
-    // method:1
-    // setUserInput({ ...userInput, enteredTitle: event.target.value }); (using single state) This method might cause error
-    // method 2: If you depend on the previous state, use this approach
-    // setUserInput((prevState) => {
-    //   return { ...prevState, enteredTitle: event.target.value };
-    // });
-  };
+     setEnteredTitle(event.target.value); //storing the user input in state (using multiple states)
+      };
   // For Amount
   const amountChangeHandler = (event) => {
-    // using multiple states--------------------------
-    setEnteredAmount(event.target.value);
-    // using single state----------------------------
-    // method:1
-    // setUserInput({ ...userInput, enteredAmount: event.target.value });
-    // method 2:
-    // setUserInput((prevState) => {
-    //   return { ...prevState, enteredAmount: event.target.value };
-    // });
-  };
+     setEnteredAmount(event.target.value);
+     };
   // For Date
   const dateChangeHandler = (event) => {
-    // using multiple states--------------------------
     setEnteredDate(event.target.value);
-    // using single state----------------------------
-    // method:1
-    // setUserInput({ ...userInput, enteredDate: event.target.value });
-    // method 2:
-    // setUserInput((prevState) => {
-    //   return { ...prevState, enteredDate: event.target.value };
-    // });
-  };
+     };
   const submitHandler = (event) => {
     event.preventDefault(); //The page won't reload now.
     const expenseData = {
